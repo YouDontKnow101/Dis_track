@@ -1,4 +1,5 @@
 const { Client, GatewayIntentBits, EmbedBuilder, Discord } = require("discord.js");
+const config = require("./config.json");
 
 const client = new Client({
   intents: [
@@ -9,11 +10,11 @@ const client = new Client({
   ],
 });
 
-const token = "";
-const PremiumRoleId = "";
-const FreeChannel = "";
-const PremiumChannel = "";
-const LogChannel = "";
+const token = config.discordToken;
+const PremiumRoleId = config.PremiumRoleID;
+const FreeChannel = config.FreeChannel;
+const PremiumChannel = config.PremiumChannel;
+const LogChannel = config.LogChannel;
 
 client.once("ready", () => {
   console.log(`Logged in as ${client.user.tag}`);
